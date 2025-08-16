@@ -14,6 +14,205 @@ body {
     }
 }
 
+/* ===========================
+   header-only styles
+   (оставить в файле, где будет только header)
+   =========================== */
+
+/* Минимальный reset, необходимый для корректной работы хедера */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+ul { list-style: none; }
+a { color: inherit; text-decoration: none; }
+button { font: inherit; cursor: pointer; border: 0; background: transparent; }
+
+/* Переменные, используемые в хедере */
+:root {
+    --white: #ffffff;
+    --black: #222222;
+    --muted: #6b6b6b;
+    --accent-start: #2fa336;
+    --accent-end: #166b1b;
+    --container-width: 1300px;
+    --radius: 6px;
+    --shadow: rgba(0,0,0,0.08);
+}
+
+/* Контейнер (центровка) — используется в header и nav */
+.container {
+    width: var(--container-width);
+    margin: 0 auto;
+}
+
+/* ==========================
+   TOP UTILITY
+   --------------------------
+   Верхняя утилити-панель (Регистрация / Войти)
+   ========================== */
+.top-utility {
+    background: transparent;
+    padding: 8px 0;
+}
+.top-utility__inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.top-utility .util-link {
+    color: var(--muted);
+    font-size: 13px;
+    margin-left: 10px;
+}
+.top-utility .util-delim { color: var(--muted); margin: 0 6px; }
+
+/* ==========================
+   HEADER MAIN
+   --------------------------
+   Основная часть хедера (логотип, поиск, контакты)
+   ========================== */
+.header-main { /* wrapper для основной части; можно задавать фон/отступы тут */ }
+
+/* Колонки хедера */
+.header-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+    padding-top: 16px;
+    padding-bottom: 14px;
+}
+
+/* Блоки: left | center | right */
+.header-left,
+.header-center,
+.header-right {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+/* LEFT — логотип + выбор филиала */
+.header-left {
+    min-width: 260px;
+    align-items: center;
+}
+.site-logo svg,
+.site-logo img {
+    height: 58px;
+    display: block;
+}
+.branch-select { display: flex; flex-direction: column; gap: 3px; }
+.branch-label { font-size: 12px; color: var(--muted); }
+.branch-current {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    color: var(--black);
+    font-weight: 600;
+    font-size: 16px;
+}
+
+/* CENTER — поиск */
+.header-center {
+    flex: 1 1 520px;
+    justify-content: center;
+}
+.search-form {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    max-width: 720px;
+    gap: 8px;
+}
+.search-input {
+    flex: 1;
+    border-radius: 8px;
+    padding: 11px 14px;
+    border: 1px solid rgba(0,0,0,0.08);
+    color: var(--black);
+    font-size: 15px;
+    background: #f6f8f6;
+}
+.search-input::placeholder { color: #9aa19a; }
+.search-button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 10px;
+    border-radius: 8px;
+    background: transparent;
+    border: 1px solid rgba(0,0,0,0.06);
+}
+
+/* RIGHT — телефон + иконки действий */
+.header-right {
+    min-width: 260px;
+    justify-content: flex-end;
+}
+.contact-info { text-align: right; margin-right: 12px; }
+.contact-label { font-size: 12px; color: var(--muted); }
+.contact-number {
+    font-size: 18px;
+    font-weight: 700;
+    color: var(--black);
+}
+.action-icons { display: flex; gap: 8px; align-items: center; }
+.icon-btn {
+    height: 36px;
+    min-width: 36px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 8px;
+    background: #ffffff;
+    border: 1px solid rgba(0,0,0,0.06);
+    color: var(--black);
+    font-size: 14px;
+}
+
+/* ==========================
+   NAV (нижняя зелёная панель)
+   ========================== */
+.header-nav { /* wrapper для nav — если нужен отступ между хедером и панелью */ }
+.site-nav {
+    background: linear-gradient(180deg, var(--accent-start), var(--accent-end));
+    padding: 10px 0;
+    box-shadow: 0 6px 18px var(--shadow);
+}
+.nav-list {
+    display: flex;
+    gap: 8px;
+    align-items: center;
+    justify-content: space-between;
+}
+.nav-item { flex: 1 1 auto; display: flex; justify-content: center; }
+.nav-link {
+    color: var(--white);
+    font-weight: 800;
+    font-size: 16px;
+    padding: 12px 10px;
+    text-align: center;
+    width: 100%;
+}
+.nav-link--active { background: rgba(0,0,0,0.12); border-radius: 6px; }
+
+/* ==========================
+   HEADER: Responsive
+   ========================== */
+@media (max-width: 980px) {
+    .branch-select { display: none; }
+    .header-center { order: 3; width: 100%; margin-top: 10px; }
+    .header-right .contact-info { display: none; }
+    .nav-list { display: none; flex-direction: column; padding: 8px; border-radius: 8px; }
+    .nav-open .nav-list { display: flex; }
+}
+
+/* Конец header-only styles */
+
+
 .layout {
     display: flex;
     flex-direction: row;
@@ -1021,3 +1220,4 @@ main.main-content {
 
   /* small cosmetics for demo */
   .mt-20{margin-top:20px}
+

@@ -1,0 +1,719 @@
+/* ===========================
+   contact.css
+   reset + layout + header
+   =========================== */
+
+/* -------------------------
+   Базовые настройки / reset
+   ------------------------- */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+button {
+    font: inherit;
+    cursor: pointer;
+    border: 0;
+    background: transparent;
+}
+
+ul {
+    list-style: none;
+}
+
+:root {
+    --white: #ffffff;
+    --black: #222222;
+    --muted: #6b6b6b;
+    --accent-start: #2fa336;
+    --accent-end: #166b1b;
+    --container-max: 1180px;
+    --radius: 6px;
+    --shadow: rgba(0, 0, 0, 0.08);
+}
+
+body {
+    font-family: Inter, "Helvetica Neue", Arial, sans-serif;
+    color: var(--black);
+    background: #ffffff;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+/* -------------------------
+   Container (центровка)
+   ------------------------- */
+.container {
+    width: 1300px;
+    margin: 0 auto;
+    padding: 0 18px;
+}
+
+/* -------------------------
+   Header layout wrapper
+   ------------------------- */
+.header-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+    padding-top: 16px;
+    padding-bottom: 14px;
+}
+
+/* ==========================
+   TOP UTILITY: START
+   --------------------------
+   верхняя утилити панель (регистрация/войти)
+   ========================== */
+.top-utility {
+    background: transparent;
+    padding: 8px 0;
+}
+
+.top-utility__inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.top-utility .util-link {
+    color: var(--muted);
+    font-size: 13px;
+    margin-left: 10px;
+}
+
+.top-utility .util-delim {
+    color: var(--muted);
+    margin: 0 6px;
+}
+
+/* ==========================
+   TOP UTILITY: END
+   ========================== */
+
+
+/* ==========================
+   HEADER MAIN: START
+   --------------------------
+   Основная часть хедера внутри .header-main
+   ========================== */
+.header-main { /* обёртка для основной части, можно использовать для отступов/фоновых правок */
+}
+
+/* header columns */
+.header-left, .header-center, .header-right {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+/* left */
+.header-left {
+    min-width: 260px;
+    align-items: center;
+}
+
+.site-logo svg {
+    height: 58px;
+    display: block;
+}
+
+.branch-select {
+    display: flex;
+    flex-direction: column;
+    gap: 3px;
+}
+
+.branch-label {
+    font-size: 12px;
+    color: var(--muted);
+}
+
+.branch-current {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    color: var(--black);
+    font-weight: 00;
+    font-size: 16px;
+}
+
+/* center (search) */
+.header-center {
+    flex: 1 1 520px;
+    justify-content: center;
+}
+
+.search-form {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    max-width: 720px;
+    gap: 8px;
+}
+
+.search-input {
+    flex: 1;
+    border-radius: 8px;
+    padding: 11px 14px;
+    border: 1px solid rgba(0, 0, 0, 0.08);
+    color: var(--black);
+    font-size: 15px;
+    background: #f6f8f6;
+}
+
+.search-input::placeholder {
+    color: #9aa19a;
+}
+
+.search-button {
+    position: relative;
+    left: -50px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* right */
+.header-right {
+    min-width: 260px;
+    justify-content: flex-end;
+}
+
+.contact-info {
+    text-align: right;
+    margin-right: 12px;
+}
+
+
+.contact-number {
+    font-size: 18px;
+    font-weight: 700;
+    color: var(--black);
+}
+
+.action-icons {
+    display: flex;
+    gap: 8px;
+    align-items: center;
+}
+
+.icon-btn {
+    height: 36px;
+    min-width: 36px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 8px;
+    background: #ffffff;
+    border: 1px solid rgba(0, 0, 0, 0.06);
+    color: var(--black);
+    font-size: 14px;
+}
+
+/* ==========================
+   HEADER MAIN: END
+   ========================== */
+
+
+/* ==========================
+   HEADER NAV: START
+   --------------------------
+   Обёртка .header-nav содержит навигацию
+   ========================== */
+.header-nav { /* при необходимости можно добавлять стили сюда */
+}
+
+.site-nav {
+    background: linear-gradient(180deg, var(--accent-start), var(--accent-end));
+    padding: 10px 0;
+    box-shadow: 0 6px 18px var(--shadow);
+}
+
+.nav-list {
+    display: flex;
+    gap: 8px;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.nav-item {
+    flex: 1 1 auto;
+    display: flex;
+    justify-content: center;
+}
+
+.nav-link {
+    color: var(--white);
+    font-weight: 800;
+    font-size: 16px;
+    padding: 12px 10px;
+    text-align: center;
+    width: 100%;
+}
+
+.nav-link--active {
+    background: rgba(0, 0, 0, 0.12);
+    border-radius: 6px;
+}
+
+/* ==========================
+   HEADER NAV: END
+   ========================== */
+
+
+/* ==========================
+   RESPONSIVE
+   ========================== */
+@media (max-width: 980px) {
+    .branch-select {
+        display: none;
+    }
+
+    .header-center {
+        order: 3;
+        width: 100%;
+        margin-top: 10px;
+    }
+
+    .header-right .contact-info {
+        display: none;
+    }
+
+    .nav-list {
+        display: none;
+        flex-direction: column;
+        padding: 8px;
+        border-radius: 8px;
+    }
+
+    .nav-open .nav-list {
+        display: flex;
+    }
+}
+/* main.css
+   Стили только для main (контентная часть).
+   Комментарии четко разделяют блоки.
+*/
+
+/* -------------------------
+   Reset / переменные (локальные для main)
+   ------------------------- */
+:root{
+    --white: #ffffff;
+    --black: #111111;
+    --muted: #6b6b6b;
+    --accent: #2fa336;
+    --container-max: 1180px;
+    --gap: 28px;
+    --card-bg: #ffffff;
+    --card-border: rgba(0,0,0,0.06);
+}
+
+/* Общие: контейнер и главная секция */
+.site-main {
+    background: var(--white);
+    color: var(--black);
+    line-height: 1.45;
+}
+
+/* Контейнер (используй также в WP) */
+
+/* Заголовок страницы */
+.page-header { margin-bottom: 14px; }
+.page-title {
+    margin-top: 20px;
+    font-size: 34px;
+    font-weight: 700;
+    margin-bottom: 6px;
+    color: var(--black);
+}
+.breadcrumb {
+    font-size: 13px;
+    color: var(--muted);
+}
+
+/* ==========================
+   CONTACT GRID (2x2 layout)
+   ========================== */
+/* Сетка: 2 колонки, 2 ряда.
+   На узких экранах — один столбец, элементы идут вертикально.
+*/
+.contact-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-auto-rows: minmax(140px, auto);
+    gap: var(--gap);
+    margin-top: 22px;
+}
+
+/* Карточка контактов */
+.contact-card {
+    background: var(--card-bg);
+    border: 1px solid var(--card-border);
+    padding: 18px;
+    border-radius: 8px;
+    box-shadow: 0 1px 0 rgba(0,0,0,0.02);
+}
+
+/* Заголовок карточки */
+.card-title {
+    font-size: 20px;
+    font-weight: 700;
+    margin-bottom: 10px;
+    color: var(--black);
+}
+
+/* метки и значения */
+.label {
+    font-size: 12px;
+    color: var(--muted);
+    font-weight: 700;
+    margin-bottom: 6px;
+}
+.value {
+    font-size: 14px;
+    color: var(--black);
+}
+
+/* контакты людей (строка: имя слева — контакт справа) */
+.person {
+    display: flex;
+    justify-content: space-between;
+    gap: 12px;
+    align-items: center;
+    padding: 10px 0;
+    border-bottom: 1px dashed rgba(0,0,0,0.03);
+}
+.person:last-of-type { border-bottom: none; }
+
+.name {
+    width: 45%;
+    color: var(--muted);
+    font-size: 14px;
+}
+.contact {
+    width: 55%;
+    text-align: right;
+    font-weight: 600;
+    font-size: 14px;
+}
+.contact a { color: inherit; text-decoration: underline; }
+
+/* выделенный контакт (по дизайну) */
+.person.highlight {
+    background: rgba(47,163,54,0.04); /* нежный зелёный оттенок */
+    border-radius: 8px;
+    padding: 12px;
+    margin: 8px 0;
+    border: 1px solid rgba(47,163,54,0.06);
+}
+
+/* Дополнительная тонкая типографика */
+.office-title { font-size: 22px; font-weight:700; margin-bottom:8px; }
+
+/* Отступ перед картой чтобы не смешивалось с контейнером */
+.map-spacer { height: 18px; }
+
+/* ==========================
+   FULL-WIDTH MAP (full-bleed)
+   ========================== */
+/* .map-full расположен ЗА пределами .container и растягивается на 100vw */
+.map-full {
+    width: 100vw;
+    position: relative;
+    left: 50%;
+    right: 50%;
+    margin-left: -50vw;
+    margin-right: -50vw;
+    /* Высота большая — "прям огромная" */
+    height: 720px;          /* <- поменяй на 900px если хочешь ещё больше */
+    background: #efefef;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    box-shadow: 0 -6px 30px rgba(0,0,0,0.06);
+}
+
+/* iFrame растягивается под размер контейнера map-full */
+.map-iframe {
+    width:100%;
+    height:100%;
+    border:0;
+    display:block;
+}
+
+/* ==========================
+   Responsive
+   ========================== */
+@media (max-width: 980px) {
+    .contact-grid {
+        grid-template-columns: 1fr;
+        gap: 18px;
+    }
+    .person { flex-direction: column; align-items: flex-start; text-align: left; }
+    .contact { text-align: left; width:100%; margin-top:6px; }
+    .map-full { height: 520px; }
+    .page-title { font-size: 28px; }
+}
+/* footer.css — исправленный, grid-основанный, фон — как у навбара (зелёный градиент) */
+
+/* переменные (совместимы с ранее использованными) */
+:root{
+    --accent-start: #2fa336;
+    --accent-end: #166b1b;
+    --footer-text: #ffffff;
+    --footer-muted: rgba(255,255,255,0.82);
+    --container: 1300px;
+}
+
+/* базовый футер */
+.site-footer{
+    padding-top: 20px;
+    background: url("https://zavod-pt.kg/bitrix/templates/aspro_max/images/footer/bg_footer.jpg");
+    background-size: cover;
+    color: var(--footer-text);
+    margin-top: 40px;
+    font-family: Inter, "Helvetica Neue", Arial, sans-serif;
+}
+
+/* внутренний контейнер: grid с 4 основными колонками */
+.footer-inner {
+    width: 1300px;
+    display: flex;
+    justify-content: space-between;
+}
+
+
+
+/* Лого */
+.footer-col--logo { display:flex; align-items:flex-start; }
+.footer-col--logo svg { width: 180px; height: auto; display:block; }
+
+/* колонки навигации */
+.col-block { margin-bottom: 8px; }
+.footer-title { color: #fff; font-size:13px; font-weight:800; margin-bottom:10px; letter-spacing:0.6px; }
+.footer-list { margin:0; padding:0; }
+.footer-list li { margin-bottom:8px; }
+.footer-list a { color: var(--footer-text); opacity:0.95; font-size:13px; text-decoration:none; display:block; padding:4px 0; }
+
+/* правая колонка: подписка и контакты */
+.subscribe-form { display:flex; gap:8px; margin: 12px 0 18px; }
+.subscribe-input {
+    flex:1;
+    padding:10px 12px;
+    border-radius:6px;
+    border:1px solid rgba(255,255,255,0.08);
+    background: rgba(255,255,255,0.03);
+    color: var(--footer-text);
+}
+.subscribe-input::placeholder { color: rgba(255,255,255,0.7); }
+.subscribe-btn {
+    padding:10px 12px;
+    border-radius:6px;
+    background: rgba(0,0,0,0.18);
+    border:1px solid rgba(255,255,255,0.06);
+    display:inline-flex;
+    align-items:center;
+    justify-content:center;
+}
+
+/* контакты */
+.footer-contacts { margin-top: 6px; color: var(--footer-text); font-size:13px; }
+.contact-item { display:flex; gap:10px; align-items:flex-start; margin:10px 0; color:var(--footer-text); }
+.contact-item a { color:var(--footer-text); font-weight:700; text-decoration:none; }
+.addr .addr-text { color: rgba(255,255,255,0.9); line-height:1.45; font-size:13px; }
+
+/* нижняя полоса */
+.footer-bottom {
+    padding: 18px 0;
+    background: linear-gradient(180deg, rgba(0,0,0,0.06), rgba(0,0,0,0.12));
+}
+.footer-bottom__inner {
+    max-width: var(--container-max);
+    margin: 0 auto;
+    padding: 0 18px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap:12px;
+    color: rgba(255,255,255,0.9);
+    font-size:13px;
+}
+
+/* соц-ссылки */
+.badge { display:inline-block; padding:6px 8px; background: rgba(255,255,255,0.06); color:var(--footer-text); border-radius:6px; margin-left:8px; text-decoration:none; }
+
+/* hover */
+.footer-list a:hover, .contact-item a:hover, .badge:hover { opacity:1; transform: translateY(-1px); transition: all .15s ease; color:#fff; }
+
+/* responsive: перестроение в один столбец */
+@media (max-width: 980px) {
+    .footer-inner { grid-template-columns: 1fr; padding: 28px 18px; }
+    .footer-bottom__inner { flex-direction: column; align-items:flex-start; gap:10px; }
+    .footer-col--logo { order: -1; } /* логотип вверху */
+    .footer-bottom__inner { padding-bottom: 18px; }
+    .contact-item { gap:8px; }
+    .footer-list a { font-size:14px; }
+}
+
+/* ============================
+   Footer: lower legal bar styles
+   (логотип | копирайт | соцсети/печать)
+   ============================ */
+
+.footer-legal {
+    /* фон у тебя уже задан глобально для footer; если нужно — можно переопределить */
+    padding: 36px 0 56px;
+    border-top: 1px solid rgba(255,255,255,0.03);
+    /* Если нужен фон-фото: uncomment и укажи путь
+       background-image: url("images/bg_footer.jpg");
+       background-size: cover;
+       background-position: center;
+    */
+}
+
+.footer-legal__inner {
+    display: grid;
+    grid-template-columns: 220px 1fr 220px; /* под твой container (1300px) */
+    gap: 28px;
+    align-items: start;
+    max-width: 1300px; /* синхронизировано с .container */
+    margin: 0 auto;
+    padding: 0 18px;
+}
+
+/* -------- logo -------- */
+.footer-legal__logo {
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+}
+.footer-legal__logo svg,
+.footer-legal__logo img {
+    display: block;
+    height: 56px;
+    width: auto;
+    filter: drop-shadow(0 6px 10px rgba(0,0,0,0.45));
+}
+
+/* -------- central copy -------- */
+.footer-legal__copy {
+    color: rgba(255,255,255,0.88); /* светлый текст */
+    font-size: 14px;
+    line-height: 1.6;
+    display: flex;
+    flex-direction: column;
+    gap: 22px;
+    padding-top: 6px; /* выровнять по вертикали */
+}
+
+/* короткая верхняя строка (поближе к лого) */
+.footer-legal__copy-top {
+    color: rgba(255,255,255,0.95);
+    font-weight: 600;
+    font-size: 10px;
+    line-height: 1.45;
+}
+
+/* большой абзац снизу (серее и чуть меньше) */
+.footer-legal__copy-bottom {
+    position: relative;
+    right: 250px;
+    color: rgba(255,255,255,0.72);
+    font-size: 10px;
+    line-height: 1.8;
+    margin-top: 2px;
+}
+
+/* -------- right column (socials + seal) -------- */
+.footer-legal__right {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 18px;
+    padding-top: 6px;
+}
+
+/* соцкнопки (квадраты) */
+.footer-legal__socials {
+    display: flex;
+    gap: 12px;
+    align-items: center;
+}
+
+.social-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 48px;
+    height: 48px;
+    background: rgba(255,255,255,0.04);
+    border-radius: 6px;
+    transition: transform .12s ease, background .12s ease;
+    border: 1px solid rgba(255,255,255,0.04);
+}
+
+.social-btn img {
+    width: 18px;
+    height: auto;
+    display: block;
+    opacity: 0.95;
+}
+
+.social-btn:hover {
+    transform: translateY(-3px);
+    background: rgba(255,255,255,0.08);
+}
+
+/* печать (снизу справа) */
+.footer-legal__seal img {
+    width: 64px;
+    height: auto;
+    display: block;
+    opacity: 0.95;
+    filter: drop-shadow(0 6px 14px rgba(0,0,0,0.5));
+}
+
+/* -------- responsive -------- */
+@media (max-width: 1100px) {
+    .footer-legal__inner {
+        grid-template-columns: 1fr;
+        text-align: center;
+        gap: 18px;
+    }
+
+    .footer-legal__logo { justify-content: center; }
+    .footer-legal__copy { align-items: center; }
+    .footer-legal__right { align-items: center; }
+    .footer-legal__seal img { margin-top: 6px; }
+}
+
+/* small devices: увеличить читаемость */
+@media (max-width: 480px) {
+    .footer-legal__copy-top { font-size: 12px; }
+    .footer-legal__copy-bottom { font-size: 12px; }
+    .social-btn { width: 42px; height: 42px; }
+    .footer-legal__logo svg, .footer-legal__logo img { height: 48px; }
+}
+
+.footer-legal__socials {
+    position: relative;
+    right: 160px;
+    width: 123px;
+    height: 43px;
+}
+
+.footer-legal__seal img {
+    position: relative;
+    right: 75px;
+    top: -70px;
+}
